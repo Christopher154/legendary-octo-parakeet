@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS pets;
-USE pets;
+CREATE DATABASE IF NOT EXISTS pets2;
+USE pets2;
 CREATE TABLE IF NOT EXISTS petOwner(id int NOT NULL AUTO_INCREMENT, name varchar(20) NOT NULL, PRIMARY KEY(id));
 CREATE TABLE IF NOT EXISTS species(id int NOT NULL AUTO_INCREMENT, speciesName varchar(20) NOT NULL, PRIMARY KEY(id));
 CREATE TABLE IF NOT EXISTS pet(id int NOT NULL AUTO_INCREMENT, petName varchar(20) NOT NULL, speciesId int NOT NULL, sex char(1), birthDate DATE NOT NULL, deathDate DATE, PRIMARY KEY(id), FOREIGN KEY (speciesId) REFERENCES species(id));
@@ -29,10 +29,10 @@ CREATE TABLE IF NOT EXISTS Pet_Owner(OwnerId int NOT NULL, PetId int NOT NULL, P
 CREATE TABLE IF NOT EXISTS temp(id int NOT NULL, petname varchar(20) NOT NULL, speciesId int NOT NULL, sex char(1), birthDate Date NOT NULL, deathDate Date, neutered char(1) NOT NULL DEFAULT '0', price float );
 INSERT INTO temp(id, petname, speciesId, sex, birthDate, deathDate) SELECT id, petname, speciesId, sex, birthDate, deathDate FROM pet;
 UPDATE temp SET neutered = '1' where sex = 'm';
-UPDATE temp SET price = 10 where id = 1
-UPDATE temp SET price = 20 where id = 2
-UPDATE temp SET price = 30 where id = 3
-UPDATE temp SET price = 40 where id = 4
-UPDATE temp SET price = 50 where id = 5
+UPDATE temp SET price = 10 where id = 1;
+UPDATE temp SET price = 20 where id = 2;
+UPDATE temp SET price = 30 where id = 3;
+UPDATE temp SET price = 40 where id = 4;
+UPDATE temp SET price = 50 where id = 5;
 DROP TABLE pet;
 
