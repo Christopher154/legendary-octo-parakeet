@@ -35,4 +35,5 @@ UPDATE temp SET price = 30 where id = 3;
 UPDATE temp SET price = 40 where id = 4;
 UPDATE temp SET price = 50 where id = 5;
 DROP TABLE pet;
-
+CREATE TABLE pet(id int NOT NULL AUTO_INCREMENT, petname varchar(20), speciesId int, sex char(1), birthDate date, deathDate date, neutered char(1), price float, Primary key (id) );
+INSERT INTO pet SELECT * FROM temp;
