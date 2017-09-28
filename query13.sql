@@ -1,0 +1,1 @@
+SELECT * FROM pet WHERE price > 9.99 AND price < 19.99 ORDER BY price DESC;
