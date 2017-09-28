@@ -1,3 +1,4 @@
+
 CREATE DATABASE IF NOT EXISTS pets;
 USE pets;
 CREATE TABLE IF NOT EXISTS petOwner(id int NOT NULL AUTO_INCREMENT, name varchar(20) NOT NULL, PRIMARY KEY(id));
@@ -23,7 +24,6 @@ INSERT INTO pet VALUES (null, 'Bowser', 2, 'm', '1998-02-04', NULL);
 INSERT INTO pet VALUES (null, 'Chirpy', 3, null, '1999-02-04', NULL);
 INSERT INTO pet VALUES (null, 'Whistler', 3, null, '2000-02-04', NULL);
 INSERT INTO pet VALUES (null, 'Slim', 4, 'm', '2001-02-04', NULL);
-INSERT INTO pet VALUES (null, 'Puffball', 4, 'f', '2002-02-04', NULL);
 
 CREATE TABLE IF NOT EXISTS Pet_Owner(OwnerId int NOT NULL, PetId int NOT NULL, PRIMARY KEY (OwnerId, PetId));
 CREATE TABLE IF NOT EXISTS temp(id int NOT NULL, petname varchar(20) NOT NULL, speciesId int NOT NULL, sex char(1), birthDate Date NOT NULL, deathDate Date, neutered char(1) NOT NULL DEFAULT '0', price float );
